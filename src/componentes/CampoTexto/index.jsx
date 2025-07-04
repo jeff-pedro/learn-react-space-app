@@ -7,6 +7,7 @@ const ContainerEstilizado = styled.div`
 `
 
 const CampoTextoEstilizado = styled.input`
+    width: 566px;
     height: 56px;
     padding: 0.75rem 1rem;
     border-radius: 10px;
@@ -14,7 +15,6 @@ const CampoTextoEstilizado = styled.input`
     border-color: #C98CF1;
     background: transparent;
     box-sizing: border-box;
-    width: 566px;
     color: #D9D9D9;
     font-weight: 400;
     font-size: 1.25rem;
