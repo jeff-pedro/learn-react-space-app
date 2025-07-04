@@ -3,6 +3,7 @@ import ItemNavegacao from "./ItemNavegacao"
 
 const ListaEstilizada = styled.ul`
   list-style: none;
+  width: 212px;
 `
 
 const BarraLateral = () => {
