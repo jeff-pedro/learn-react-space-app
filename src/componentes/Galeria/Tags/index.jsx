@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import tags from "./tags.json"
 
 const TagsContainer = styled.div`
   display: flex;
@@ -13,41 +14,37 @@ const ListaDeTags = styled.ul`
   gap: 24px;
 `
 
-const Tag = styled.li`
-  display: flex;
-    align-items: center;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  color: #FFFFFF;
-  padding: 10px 8px;
-  background-color: rgba(217, 217, 217, 0.3);
-  border-radius: 10px;
-  border: ${ (props) => props.$ativo ? "solid 2px #C98CF1" : "" };
-`
-
-const ParagrafoEstilizado = styled.p`
+const TagTitulo = styled.h3`
   font-size: 24px;
   font-weight: 400;
   color: #D9D9D9;
+  margin: 0;
+`
+
+const Tag = styled.li`
+  font-size: 24px;
+  color: #FFFFFF;
+  padding: 10px 8px;
+  background-color: rgba(217, 217, 217, 0.3);
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  &:hover {
+    border-color: #C98CF1;
+  }
 `
 
 const Tags = () => {
   return (
     <TagsContainer>
-      <ParagrafoEstilizado>Busque por tags:</ParagrafoEstilizado>
+      <TagTitulo>Busque por tags:</TagTitulo>
       <ListaDeTags>
-        <Tag
-          $ativo={true}
-        >
-          Estrelas
-        </Tag>
-        <Tag>
-          Galáxias
-        </Tag>
-        <Tag>
-          Lua
-        </Tag>
+        {tags.map((tag) => 
+          <Tag key={tag.id}>
+            {tag.titulo}
+          </Tag>
+        )}
       </ListaDeTags>
     </TagsContainer>
   )
