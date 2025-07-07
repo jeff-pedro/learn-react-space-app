@@ -1,5 +1,5 @@
-import { useState } from "react"
 import styled from "styled-components";
+import BotaoIcone from "../../BotaoIcone";
 
 const Figure = styled.figure`
   width: ${ (props) => props.$expandida ? "90%" : "460px" };
@@ -31,22 +31,28 @@ const Figure = styled.figure`
   }
 `
 
-const Imagem = ({ foto }) => {
-  const [expandida, setExpandida] = useState(false);
-  console.log(expandida)
+const Rodape = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
+const Imagem = ({ foto, expandida = false }) => {
   return (
     <Figure $expandida={expandida} >
       <img src={foto.path} alt="" />
       <figcaption>
-        <footer>
-            <h3>Titulo</h3>
-            <h4>Fonte/examplo/satélite</h4>
-            <button>Favoritos</button>
-            <button
-              onClick={() => setExpandida(!expandida)}
-            >Expandida</button>
-        </footer>
+        <h3>{foto.titulo}</h3>
+        <Rodape>
+            <h4>{foto.fonte}</h4>
+            <BotaoIcone>
+              <img src="/icones/favorito.png" alt="Icone de favorito"/>
+            </BotaoIcone>
+            {!expandida && <BotaoIcone aria-hidden={expandida}>
+              <img src="/icones/expandir.png" alt="Icone de expandir"/>
+            </BotaoIcone>
+            }
+        </Rodape>
       </figcaption>
     </Figure>
   )
