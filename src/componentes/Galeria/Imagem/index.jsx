@@ -39,8 +39,8 @@ const Rodape = styled.footer`
 
 const Imagem = ({ foto, expandida = false, aoZoomSolicitado }) => {
   return (
-    <Figure $expandida={expandida} >
-      <img src={foto.path} alt="" />
+    <Figure $expandida={expandida} id={`foto-${foto.id}`}>
+      <img src={foto.path} alt={foto.alt} />
       <figcaption>
         <h3>{foto.titulo}</h3>
         <Rodape>

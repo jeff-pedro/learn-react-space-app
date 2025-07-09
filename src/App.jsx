@@ -51,7 +51,7 @@ const App = () => {
             />
             <Galeria 
               fotos={fotosDaGaleria}
-              aofotoSelecionada={(foto) => setFotoSelecionada(foto)}
+              aoFotoSelecionada={(foto) => setFotoSelecionada(foto)}
             />
           </ConteudoGaleria>
         </MainContainer>
