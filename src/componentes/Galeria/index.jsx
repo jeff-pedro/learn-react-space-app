@@ -10,6 +10,11 @@ const GaleriaContainer = styled.div`
 
 const SecaoFluida = styled.section`
   flex-grow: 1;
+  flex: 4;
+`
+
+const Test = styled.section`
+  flex: 1;
 `
 
 const ImagemContainer = styled.div`
@@ -36,7 +41,9 @@ const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
             )}
           </ImagemContainer>
         </SecaoFluida>
-        <Populares />
+        <Test>
+          <Populares />
+        </Test>
       </GaleriaContainer>
     </>
   )
