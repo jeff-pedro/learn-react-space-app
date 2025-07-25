@@ -6,17 +6,18 @@ import Imagem from "./Imagem"
 
 const GaleriaContainer = styled.div`
   display: flex;
-`
+  `
 
 const SecaoFluida = styled.section`
   flex-grow: 1;
-`
+  `
 
 const ImagemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
+  margin-right: 24px;
 `
 
 const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
