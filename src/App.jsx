@@ -58,6 +58,9 @@ const App = () => {
       </AppContainer>
       <ModalZoom 
         foto={fotoSelecionada}
+        aoFechar={(e) => {
+          e.target.close("Teste");
+        }}
       />
     </FundoGradiente>
   )
